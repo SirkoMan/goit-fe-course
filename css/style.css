@@ -2,11 +2,14 @@
   margin: 0px;
   padding: 0px;
 }
+body {
+  background-image: linear-gradient(to right, #dbe6f6, #c5796d);
+}
 .wrapper {
-  width: 900px;
-  margin: auto;
-  padding: 30px;
-  background-color: blanchedalmond;
+  box-sizing: border-box;
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 30px;
 }
 .main-menu-list {
   list-style-position: inside;

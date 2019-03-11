@@ -6,9 +6,11 @@
   margin: 0;
   padding: 0;
 }
-
 html {
   box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
 }
 *,
 *::before,
@@ -85,10 +87,19 @@ html {
 .footer-button {
   display: block;
   margin: 0 auto;
+  padding: 18px 20px;
   font-size: 20px;
   color: rgb(98, 98, 98);
   background-color: #fff;
-  width: 164px;
-  height: 60px;
+  max-width: 200px;
   border: 1px solid #989898;
+  font-size: 20px;
+  color: rgb(98, 98, 98);
+  line-height: 1.2;
+  cursor: pointer;
+}
+.footer-button:hover,
+.footer-button:focus {
+  color: #03a9f4;
+  border-color: #03a9f4;
 }
