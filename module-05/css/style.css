@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400i,700,900&subset=cyrillic");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 0;
+  line-height: 1.2;
+}
+body {
+  font-family: sans-serif;
+  background-color: #e9f0fd;
+}
+a {
+  text-decoration: none;
+}
+.wrapper {
+  width: 1170px;
+  padding: 30px 15px;
+  margin: 0 auto;
+}
+.logo-link {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  text-align: center;
+  width: 100px;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: "Roboto", bold;
+  color: rgb(85, 82, 82);
+  text-transform: uppercase;
+}
+.logo-link > p::first-letter {
+  color: rgb(26, 188, 156);
+  font-family: "Roboto", bold;
+}
+.menu-list {
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  width: 1025px;
+  list-style: none;
+}
+
+.menu-list > li {
+  display: inline-block;
+  margin: 0 15px;
+}
+.menu-list > li > a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "Open Sans", bold;
+  text-transform: uppercase;
+  color: #0f0101;
+}
+.menu-list > li > a:focus,
+.menu-list > li > a:hover {
+  color: rgb(26, 188, 156);
+}
+
+/* --------- SLIDER ---------- */
+.slider-wrp {
+  position: relative;
+  width: 100vw;
+  min-height: 600px;
+  margin-bottom: 71px;
+}
+.slider-img {
+  position: static;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(52%);
+}
+.slider {
+  position: absolute;
+  max-width: 1170px;
+  margin: 0 auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.button {
+  --s: 104px;
+  position: absolute;
+  width: var(--s);
+  height: var(--s);
+  background-color: rgba(78, 198, 171, 0.651);
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+  padding: 0 40px;
+}
+.left-btn {
+  top: 225px;
+  left: 30px;
+}
+.right-btn {
+  top: 225px;
+  right: 30px;
+}
+.button:focus,
+.button:hover {
+  background-color: rgb(78, 198, 171);
+}
+.arrow {
+  display: inline-block;
+  --s: 24px;
+  width: var(--s);
+  height: var(--s);
+  border-right: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  background: transparent;
+}
+.a-right {
+  transform: rotate(-45deg);
+}
+.a-left {
+  transform: rotate(135deg);
+}
+.slider-text {
+  position: absolute;
+  top: 213px;
+  left: 190px;
+  z-index: 10;
+  max-width: 790px;
+  text-align: center;
+  min-height: 110px;
+}
+.slider-text > h3 {
+  font-size: 60px;
+  line-height: 60px;
+  font-family: "Roboto", bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.slider-text > h4 {
+  font-size: 24px;
+  line-height: 24px;
+  font-family: "Roboto", bold;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* ----- Header of Product card-------- */
+.featured-products {
+  padding: 0 0 74px 0;
+}
+.headline-fp,
+.headline-ln {
+  font-size: 48px;
+  font-family: "Roboto", bold;
+  color: rgb(81, 81, 81);
+  text-transform: uppercase;
+  line-height: 48px;
+  margin: 0 15px;
+  text-align: center;
+}
+.headline-fp::after,
+.headline-ln::after {
+  content: "";
+  background-color: rgb(26, 188, 156);
+  display: block;
+  width: 164px;
+  height: 7px;
+  margin: 32px auto 0;
+}
+.headline-fp::after {
+  margin-bottom: 92px;
+}
+.headline-ln::after {
+  margin-bottom: 80px;
+}
+
+/*---------------- Product card ------------------*/
+.product-name {
+  display: none;
+}
+.product-card {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 15px 30px;
+  width: 255px;
+  height: 322px;
+  background-color: #fff;
+}
+.product-card:hover .active-img {
+  display: block;
+}
+.product-card:hover .card-icon-wrp {
+  display: block;
+}
+
+.product-card:hover .name {
+  background-color: rgb(26, 188, 156);
+}
+.product-card:hover .price {
+  background-color: rgb(26, 188, 156, 0.44);
+}
+.img-card-wrp {
+  display: block;
+  width: 255px;
+  height: 282px;
+  position: relative;
+}
+.img-card-wrp > img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.active-img {
+  display: none;
+  background-color: rgba(0, 0, 0);
+  opacity: 0.549;
+  z-index: 5;
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  right: 10px;
+  bottom: 11px;
+}
+
+.card-icon-wrp {
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 45px;
+  z-index: 10;
+  width: 178px;
+  height: 107px;
+}
+.icon-btn {
+  box-sizing: border-box;
+  vertical-align: top;
+  --s: 50px;
+  width: var(--s);
+  height: var(--s);
+  background: transparent;
+  border: 1px solid #fff;
+  margin: 0 9px 7px 0;
+  cursor: pointer;
+}
+.icon-buy-btn {
+  padding: 10px 0 10px 12px;
+  width: 168px;
+  height: 50px;
+  background: #323232;
+  border: 1px solid #fff;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0;
+}
+.icon-cart {
+  display: inline-block;
+  vertical-align: top;
+}
+.icon-buy-btn > span {
+  display: inline-block;
+  margin-left: 20px;
+  font-family: "Open Sans", bold;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 28px;
+  vertical-align: top;
+}
+.icon-btn:focus,
+.icon-buy-btn:focus,
+.icon-btn:hover,
+.icon-buy-btn:hover {
+  border: none;
+  background-color: rgb(26, 188, 156);
+}
+
+.name-price-wrp {
+  width: 255px;
+  height: 40px;
+  text-align: right;
+  cursor: pointer;
+}
+.name,
+.price {
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Roboto", bold;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 40px;
+}
+.name {
+  width: 200px;
+  text-align: left;
+  text-indent: 14px;
+  background-color: #555252;
+}
+.price {
+  background-color: rgb(85, 82, 82, 0.44);
+  width: 55px;
+  text-align: center;
+}
+.price::before {
+  content: "$";
+}
+
+/* ----------- Footer ------------- */
+.footer-wrp {
+  width: 1170px;
+  min-height: 88px;
+  margin: 0 auto;
+  background-color: #555;
+}
+.footer-wrp > p {
+  text-align: center;
+  font-family: "Open Sans", bold;
+  font-size: 16px;
+  line-height: 88px;
+  color: #fefefe;
+}
+.dev {
+  color: rgb(26, 188, 156);
+}
+.dev:focus,
+.dev:hover {
+  color: hsl(168, 76%, 82%);
+}

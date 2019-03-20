@@ -4,13 +4,33 @@
 }
 body {
   background-image: linear-gradient(to right, #dbe6f6, #c5796d);
+  background-image: url(../img/02.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 24px;
 }
+h1 {
+  color: gold;
+}
+a {
+  text-decoration: none;
+  color: gold;
+}
+a:focus,
+a:hover,
+.main-menu-list > li:hover {
+  color: goldenrod;
+}
+
 .wrapper {
   box-sizing: border-box;
-  width: 300px;
+  width: 500px;
   margin: 0 auto;
   padding-top: 30px;
 }
 .main-menu-list {
   list-style-position: inside;
+  color: gold;
 }

@@ -6,6 +6,11 @@
   margin: 0;
   padding: 0;
 }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 html {
   box-sizing: border-box;
   font-size: 0;
@@ -13,11 +18,7 @@ html {
 body {
   font-family: sans-serif;
 }
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+
 a {
   text-decoration: none;
 }
@@ -136,6 +137,7 @@ a {
 .img-card-wrp > img {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
 }
 .name-price-wrp {
   width: 255px;
