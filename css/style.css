@@ -30,6 +30,9 @@ a:hover,
   margin: 0 auto;
   padding-top: 30px;
 }
+.main-menu {
+  padding-left: 20px;
+}
 .main-menu-list {
   list-style-position: inside;
   color: gold;

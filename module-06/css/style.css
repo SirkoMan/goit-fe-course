@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,600i,700,700i,900,900i&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&subset=cyrillic-ext");
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  background-color: white;
+  font-size: 0;
+  line-height: 1.2;
+  --fs: 1200px;
+  --col: 80px;
+  --gap: 20px;
+  --bl: calc(var(--col) + var(--gap));
+  --photo: calc((var(--bl) * 4) - var(--gap));
+  --turq: rgb(26, 188, 156);
+  --orange: rgb(249, 129, 129);
+  --yello: rgb(252, 227, 138);
+  --tu: rgb(149, 225, 211);
+}
+.block-I {
+  width: var(--bl);
+}
+.block-IV {
+  width: calc(var(--bl) * 4);
+}
+.block-V {
+  width: calc(var(--bl) * 5);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--fs);
+  min-height: 100vh;
+  padding-top: 28px;
+  margin: 0 auto;
+}
+
+/* ---------------- HEADER ------------------*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 114px;
+}
+.header:hover .logo-wrp {
+  animation-name: tada;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+.logo-link {
+  display: inherit;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-link {
+  display: block;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: var(--turq);
+  text-transform: uppercase;
+  transition: color 0.2s linear;
+}
+.menu-link:hover {
+  color: var(--orange);
+}
+.menu-link::after {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 0;
+  border-bottom: 3px solid var(--orange);
+  transition: width 0.2s linear;
+}
+.menu-link:hover::after {
+  width: 100%;
+}
+
+/* ------------------ MAIN ---------------------- */
+.section {
+  color: rgb(51, 51, 51);
+}
+.section-subt {
+  font-size: 24px;
+  font-family: "Kaushan Script", cursive;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.section-tittle {
+  font-size: 30px;
+  font-family: "Montserrat", bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 65px;
+}
+.section-tittle::after {
+  margin: 38px auto 0;
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--orange);
+}
+.items-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.section-item {
+  display: flex;
+  align-items: flex-start;
+  flex-basis: calc((var(--bl) * 4) - var(--gap));
+  min-height: 170px;
+  padding-bottom: 30px;
+}
+.section-item-logo {
+  flex-basis: var(--col);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.section-item-logo img {
+  display: block;
+  margin: 0 auto;
+}
+.item-subt {
+  font-size: 14px;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-text {
+  max-width: calc(var(--bl) * 9);
+  margin: 0 auto 90px;
+  text-align: center;
+}
+.item-text,
+.section-text {
+  font-size: 15px;
+  font-family: "Roboto";
+  color: rgb(153, 153, 153);
+  line-height: 1.6;
+}
+
+/* ---------------- TEAM ----------------- */
+.wrapper-team {
+  flex-basis: var(--fs);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.persona {
+  width: var(--photo);
+  min-height: 595px;
+  position: relative;
+  padding-bottom: 30px;
+}
+.persona > figcaption {
+  font-size: 16px;
+}
+.active-photo {
+  width: var(--photo);
+  height: 470px;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  margin-bottom: 27px;
+}
+.photo-gradient {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: var(--photo);
+  height: 470px;
+  background-image: linear-gradient(var(--orange), var(--yello));
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+.active-photo:hover {
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px 0 0 var(--tu);
+}
+.active-photo:hover .photo-gradient {
+  opacity: 0.9;
+}
+
+/* ----------------- ICONS ---------------- */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.box-icon {
+  display: flex;
+  width: 55px;
+  height: 56px;
+  background-color: var(--tu);
+  margin-right: 1px;
+  transition: background-color 0.2s linear;
+}
+.active-photo:hover .social-icons {
+  opacity: 1;
+}
+.box-icon:hover {
+  background-color: var(--yello);
+}
+.box-icon img {
+  margin: auto;
+}
+/* ------------------ end ICONS ------------- */
+
+.about-persona {
+  text-align: center;
+}
+.author {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(51, 51, 51);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.about-persona > p {
+  font-size: 15px;
+  font-family: "Roboto";
+  color: rgb(153, 153, 153);
+  font-style: italic;
+}
+
+/* ---------------- FOOTER ----------------------- */
+.footer-wrp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--fs);
+  min-height: 63px;
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(51, 51, 51);
+  border-top: 1px solid rgb(229, 229, 229);
+}
+.dev {
+  color: var(--orange);
+}
+
+form {
+  font-size: 0;
+  vertical-align: middle;
+}
+
+input {
+  font-size: 16px;
+  border: none;
+  box-shadow: none;
+  vertical-align: middle;
+}
+
+input[type="email"] {
+  width: 230px;
+  height: 40px;
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  padding-left: 1rem;
+}
+
+input[type="submit"] {
+  width: 152px;
+  height: 40px;
+  background: var(--turq);
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Montserrat", serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input::placeholder {
+  color: #e7e7e7;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  animation-name: tada;
+}
