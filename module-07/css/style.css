@@ -1,0 +1,300 @@
+/* montserrat-regular - cyrillic_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('../fonts/montserrat-v13-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v13-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - cyrillic_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('../fonts/montserrat-v13-cyrillic_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v13-cyrillic_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* noto-sans-regular - latin */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'),
+       url('../fonts/noto-sans-v8-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/noto-sans-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@keyframes flip {
+  from {
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    transform: scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+      rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --w: 940px;
+  --blk: 290px;
+  --icon: 72px;
+  --form-col: 455px;
+  --golden: rgb(254, 209, 54);
+  --black: rgb(34, 34, 34);
+  --ln: 1.2;
+  --fs: 16px;
+  --inps: 50px; /*input height*/
+  line-height: 1.2;
+  font-size: var(--fs);
+  box-sizing: border-box;
+}
+.header-wrp,
+.main-wrp {
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+}
+.header {
+  display: flex;
+  align-items: flex-end;
+  max-width: var(--w);
+  min-height: 28px;
+  margin: 0 auto;
+  padding-top: 44px;
+}
+.site-logo {
+  display: block;
+  font-size: 0;
+}
+.nav-wrp {
+  margin-left: auto;
+  width: 485px;
+  flex-basis: 485px;
+  font-size: 0;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-bottom: 5px;
+}
+.nav-item {
+  padding: 0 5px;
+}
+.nav-item-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--black);
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+.nav-item-link:focus,
+.nav-item-link:hover {
+  color: var(--golden);
+}
+
+/* ----------------- MAIN ----------------------- */
+.main {
+  max-width: var(--w);
+  margin: 0 auto;
+  padding-bottom: 102px;
+}
+.services {
+  text-align: center;
+  padding-top: 124px;
+  margin-bottom: 19px;
+}
+.services-title {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  font-weight: bold;
+}
+.services-subtitle {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-family: 'Noto Sans', sans-serif;
+  color: rgb(119, 119, 119);
+}
+.services-item-wrp {
+  padding-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.services-item {
+  width: var(--blk);
+  flex-basis: var(--blk);
+  min-height: 232px;
+  padding-top: 27px;
+  padding-bottom: 20px;
+}
+.services-item:hover .service-icon-wrp {
+  backface-visibility: visible;
+  animation-name: flip;
+  animation-duration: 1s;
+}
+.service-icon-wrp {
+  width: var(--icon);
+  height: var(--icon);
+  border: 2px solid var(--golden);
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto 23px;
+}
+.service-icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.services-item-title {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.about-service {
+  font-size: 14px;
+  font-family: 'Noto Sans', sans-serif;
+  color: rgb(119, 119, 119);
+}
+
+/* --------------------- FOOTER --------------------- */
+.footer-wrp {
+  width: 100vw;
+  background-color: var(--black);
+  border-bottom: 20px solid var(--black);
+  background-image: url(../img/map-back.png);
+  background-size: auto;
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.footer {
+  padding-top: 101px;
+  max-width: var(--w);
+  margin: 0 auto;
+  min-height: 676px;
+  text-align: center;
+}
+.feedback-title {
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+.feedback-subtitle {
+  font-size: 16px;
+  font-family: 'Noto Sans', sans-serif;
+  color: rgb(119, 119, 119);
+  margin-bottom: 26px;
+}
+.input-wrp {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-top: 50px;
+}
+.input-list,
+.textarea {
+  width: var(--form-col);
+  flex-basis: var(--form-col);
+  min-height: 212px;
+  margin-bottom: 30px;
+}
+.input-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.input {
+  width: 100%;
+  height: var(--inps);
+}
+.textarea {
+  resize: none;
+  padding-top: calc((var(--inps) - (var(--fs) * var(--ln))) / 2);
+}
+.input,
+.textarea {
+  border: 0;
+  border-radius: 3px;
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  font-weight: bold;
+  box-shadow: none;
+}
+.input:required:valid,
+.textarea:required:valid {
+  outline: 1px solid greenyellow;
+  box-shadow: 0 0 1px 2px greenyellow;
+}
+.input:focus:required:invalid,
+.textarea:focus:required:invalid {
+  outline: 1px solid red;
+  box-shadow: 0 0 1px 2px red;
+}
+.input::placeholder,
+.textarea::placeholder {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(187, 187, 187);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.submit-button {
+  min-width: 240px;
+  height: 65px;
+  text-transform: uppercase;
+  background-color: var(--golden);
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: 0;
+  border-radius: 3px;
+}

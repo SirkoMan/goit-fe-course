@@ -70,6 +70,9 @@ a {
   display: flex;
   justify-content: space-between;
 }
+.menu-item {
+  padding: 0 5px;
+}
 .menu-link {
   display: block;
   font-size: 14px;
@@ -257,23 +260,29 @@ a {
 
 /* ---------------- FOOTER ----------------------- */
 .footer-wrp {
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: var(--fs);
+  flex-wrap: wrap;
+  align-content: flex-start;
   min-height: 63px;
   font-size: 14px;
   font-family: "Montserrat";
   color: rgb(51, 51, 51);
   border-top: 1px solid rgb(229, 229, 229);
 }
+.footer-wrp > p {
+  flex-shrink: 0;
+}
 .dev {
   color: var(--orange);
 }
-
 form {
+  flex-shrink: 0;
   font-size: 0;
   vertical-align: middle;
+  margin-left: auto;
+  padding: 8px 0;
 }
 
 input {
